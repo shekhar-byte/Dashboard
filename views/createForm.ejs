@@ -1,0 +1,116 @@
+<% layout('layout/boilerplate.ejs') %>
+
+    <div class="row">
+        <h1 class="text-center">Create Profile </h1>
+        <div class="col-6 offset-3">
+
+            <body>
+                <form action="/profile" novalidate class="validated-form" method="post">
+                    <div class="mb-3">
+                        <label class="form-label" for="name"> Name</label>
+                        <input type="text" class="form-control" name="name" required id="name" placeholder="what's your name">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            *Required
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">address</label>
+                        <input type="text" name="address" class="form-control" required id="address" placeholder="location">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            *Required
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="imgUrl" class="form-label">Image URL</label>
+                        <input type="text" name="imgUrl" class="form-control" required id="imgUrl" placeholder="image URL">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            *Required
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="age" class="form-label">Age</label>
+                        <div class="input-group">
+
+                            <input type="number" id="age" name="age" required class="form-control">
+                            <span class="input-group-text">Years</span>
+                        </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            *Required
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="occupation" class="form-label"> occupation</label>
+                        <textarea type="text" name="occupation" required class="form-control" id="occupation" placeholder="occupation"></textarea>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            *Required
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="hobbies" class="form-label"> hobbies</label>
+                        <textarea type="text" name="hobbies" required class="form-control" id="hobbies" placeholder="hobbies"></textarea>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            *Required
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dob" class="form-label"> dob</label>
+                        <input type="text" name="dob" required class="form-control" id="dob" placeholder="dob"></input>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            *Required
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="mb-3">
+                        <button class="btn btn-success" type="submit">Submit</button>
+                    </div>
+                </form>
+                <a href="/campgrounds">Cancel</a>
+        </div>
+    </div>
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.validated-form')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>

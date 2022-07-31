@@ -1,0 +1,48 @@
+<% layout('layout/boilerplate.ejs') %>
+    <div id="cluster-map"></div>
+    <h1>All Profiles</h1>
+
+    <%for(let profile  of profiles){ %>
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-4">
+
+                    <img width="200" height="300" class="img-fluid" src="<%=profile.imgUrl%>" alt="">
+
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= profile.name %>
+                        </h5>
+                        <p class="card-text">
+                            <%=profile.address %>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <%=profile.occupation %>
+                            </small>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <%=profile.age %>
+                            </small>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <%=profile.dob %>
+                            </small>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <%=profile.hobbies %>
+                            </small>
+                        </p>
+                        <% if(currentUser && profile.author.equals(currentUser.id)){ %>
+                            <a class="btn btn-primary" href="/profiles/<%=profile.id%>">Edit</a>
+                            <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
